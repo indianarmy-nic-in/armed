@@ -582,13 +582,21 @@ color:#0284c7;
 }
 
 /* ================== NEW ASIGMA CHAT UI CSS ================== */
+
 .asigma-container {
     background: #ffffff;
     width: 100%;
     min-height: 100vh;
-    padding: 30px 20px 20px 20px;
+
+    padding:
+    calc(env(safe-area-inset-top) + 35px)
+    20px
+    30px
+    20px;
+
     color: #000;
 }
+
 .asigma-header {
     display: flex;
     justify-content: space-between;
