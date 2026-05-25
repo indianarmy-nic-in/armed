@@ -1,1151 +1,1410 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <title>IAFZ - Indian Armed Forces</title>
 
-<title>My Web App</title>
+    <link rel="apple-touch-icon" sizes="152x152" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5c8fQphzonm87AQhPjECMXK2wLcdtKHwym_04wu_aFRw0ljTD-VVSTLx8tbK571K5uTpfcBqz4vIQw1bhIyfspls4A7xkG_Wr4bbJeQiBJcmQqPHjnb5RDn692A_bXei3QpppZ9xmaqiUwVWUpITgIkx2MCTVtPTzK-4gRZuaYMDBUyK7UfylvlQKJ0hD/s512/Untitled%20design.jpeg">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5c8fQphzonm87AQhPjECMXK2wLcdtKHwym_04wu_aFRw0ljTD-VVSTLx8tbK571K5uTpfcBqz4vIQw1bhIyfspls4A7xkG_Wr4bbJeQiBJcmQqPHjnb5RDn692A_bXei3QpppZ9xmaqiUwVWUpITgIkx2MCTVtPTzK-4gRZuaYMDBUyK7UfylvlQKJ0hD/s512/Untitled%20design.jpeg">
+    <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIghnd81b4IV_bCotk87s2-47fScJBJLe3NjpD2sQmst1Efhh04vR6P6TmZde2BSYc6_TJ1fNdrb7Yc4osE3VsEMghyDYEyXKDUKJQZo8vv71iH6wpaFAnop99Yv4k50u9xRMqQucYLqtKZ1Pages/s32/Untitled%20design.jpeg">
 
-<!-- PWA SETTINGS -->
-<meta name="theme-color" content="#000000">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="MyApp">
-<meta name="application-name" content="MyApp">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="IAFZ">
+    <meta name="theme-color" content="#000000">
 
-<!-- APP ICON -->
-<link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBu73LUolIO1hS-5SJMHjaHJeqjK8A7gk2F_eU_aJM-79yEpbPZ3PhtoO-RfbHhMVq6lvb2563WmAidyaM8SONrvjuM1AxFV6bOci6ABaf03A1G9utnGZbOng-0m1mpHcC2PaFITX5DdDv1jFfJYOYzmsQrbggQQaxwr2ecWHPxWaOFb9kG1eG613mx_Ow/s512/INDIAN%20ARMY%20SOCIAL%20MEDIA%20PORTAL.jpeg">
+    <link rel="manifest" href="manifest.json">
 
-<link rel="apple-touch-icon"
-href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBu73LUolIO1hS-5SJMHjaHJeqjK8A7gk2F_eU_aJM-79yEpbPZ3PhtoO-RfbHhMVq6lvb2563WmAidyaM8SONrvjuM1AxFV6bOci6ABaf03A1G9utnGZbOng-0m1mpHcC2PaFITX5DdDv1jFfJYOYzmsQrbggQQaxwr2ecWHPxWaOFb9kG1eG613mx_Ow/s512/INDIAN%20ARMY%20SOCIAL%20MEDIA%20PORTAL.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- MANIFEST -->
-<link rel="manifest" id="manifest-placeholder">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    -webkit-tap-highlight-color:transparent;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-html,body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    background:#000;
-    font-family:Arial,sans-serif;
-    -webkit-user-select:none;
-    user-select:none;
-}
+    /* 🚫 एंटी-सेव और एंटी-कॉपी प्रोटेक्शन (कोई भी चित्र सेव नहीं हो सकेगा) */
+    html, body {
+        width: 100%;
+        min-height: 100dvh;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background: #000 !important;
+        font-family: 'Poppins', sans-serif;
 
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+        -webkit-text-size-adjust: 100%;
+        overscroll-behavior: none;
 
-.app{
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    background:linear-gradient(135deg,#000,#111,#222);
-    color:white;
-    text-align:center;
-    padding:20px;
-}
+        -webkit-touch-callout: none; /* मोबाइल पर लॉन्ग-प्रेस मेनू डिसेबल करें */
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none; /* टेक्स्ट सिलेक्शन डिसेबल करें */
+    }
 
-.app img{
-    width:120px;
-    height:120px;
-    border-radius:30px;
-    margin-bottom:20px;
-    box-shadow:0 0 25px rgba(255,255,255,0.3);
-}
+    input {
+        -webkit-user-select: text; /* इनपुट बॉक्स में टाइप करने के लिए अनुमति */
+        user-select: text;
+    }
 
-h1{
-    font-size:34px;
-    margin-bottom:10px;
-}
+    img {
+        -webkit-user-drag: none; /* चित्र को खींचकर सेव करने से रोकें */
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+        pointer-events: none; /* चित्र पर क्लिक और लॉन्ग-प्रेस को पूरी तरह ब्लॉक करें */
+    }
 
-p{
-    font-size:18px;
-    opacity:0.8;
-}
-</style>
-</head>
+    /* PRELOADER */
+    #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVeDQ-4jG26a6qAnkLYv-IMuhj9HwOqCxoXPolDiFAp52Wu3ejHPYsR2Tb3DuXyfsJ4YMqDqrGIJgwmx1tB-Q6OmH8nNIBM19SU8rL0bfgW-i-coV_3rhTl0LuUmQ08Vf5hST2NiDo_07dK6YnfC95FPBLBPi9LCYbclzAsGOqiiDhGIv28VTJL8uqol8B/s1920/Add%20a%20heading.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
 
-<body>
+    .logo-box {
+        width: 150px;
+        height: 150px;
+        border-radius: 14px;
+        overflow: hidden;
+        animation: glow 2s infinite alternate;
+    }
 
-<div class="app">
+    .logo-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: zoomIn 1.8s ease forwards;
+    }
 
-    <!-- APP ICON IMAGE -->
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBu73LUolIO1hS-5SJMHjaHJeqjK8A7gk2F_eU_aJM-79yEpbPZ3PhtoO-RfbHhMVq6lvb2563WmAidyaM8SONrvjuM1AxFV6bOci6ABaf03A1G9utnGZbOng-0m1mpHcC2PaFITX5DdDv1jFfJYOYzmsQrbggQQaxwr2ecWHPxWaOFb9kG1eG613mx_Ow/s512/INDIAN%20ARMY%20SOCIAL%20MEDIA%20PORTAL.jpeg">
+    .loader-text {
+        margin-top: 22px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 4px;
+        text-align: center;
+        opacity: 0;
+        animation: textAnim 2.5s ease forwards;
+        animation-delay: 1s;
+        text-shadow: 0 0 12px rgba(255,255,255,0.6);
+    }
 
-    <h1>Fullscreen Web App</h1>
-    <p>Add To Home Screen करके चलाओ</p>
+    @keyframes zoomIn {
+        0% { transform: scale(0.5); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
 
-</div>
+    @keyframes glow {
+        0% { box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+        100% { box-shadow: 0 0 35px rgba(255,255,255,0.9); }
+    }
 
-<script>
+    @keyframes textAnim {
+        0% { opacity: 0; transform: translateY(20px); letter-spacing: -3px; }
+        100% { opacity: 1; transform: translateY(0); letter-spacing: 4px; }
+    }
 
-/* DYNAMIC MANIFEST */
-const manifestData = {
-    "name": "MyApp",
-    "short_name": "MyApp",
-    "start_url": ".",
-    "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#000000",
-    "orientation": "portrait",
+    /* LOGIN */
+    #loginPage {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-size: cover !important;
+        background-position: center !important;
+        background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgX9ZZbUSTg0UC7EKdAgZx9415RAvZvrX7cF7Q7ngf4RjiCy2bVEVJNKS0Y_ymUAppjfJZWlZtPY6n4e2IToZJqLc_tZR1g0puXfhugOezfjoY02HuFeuac_YlBeF7qq8lRDKsD3CPA-E0yuDbHMDcBJ2nLVIHK3D2WZUdP8mc9teLt_BSe4Dg9HE04DHHx/s1920/Add%20a%20heading.jpeg');
+        overflow: hidden;
+    }
 
-    "icons": [
-        {
-            "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBu73LUolIO1hS-5SJMHjaHJeqjK8A7gk2F_eU_aJM-79yEpbPZ3PhtoO-RfbHhMVq6lvb2563WmAidyaM8SONrvjuM1AxFV6bOci6ABaf03A1G9utnGZbOng-0m1mpHcC2PaFITX5DdDv1jFfJYOYzmsQrbggQQaxwr2ecWHPxWaOFb9kG1eG613mx_Ow/s512/INDIAN%20ARMY%20SOCIAL%20MEDIA%20PORTAL.jpeg",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBu73LUolIO1hS-5SJMHjaHJeqjK8A7gk2F_eU_aJM-79yEpbPZ3PhtoO-RfbHhMVq6lvb2563WmAidyaM8SONrvjuM1AxFV6bOci6ABaf03A1G9utnGZbOng-0m1mpHcC2PaFITX5DdDv1jFfJYOYzmsQrbggQQaxwr2ecWHPxWaOFb9kG1eG613mx_Ow/s512/INDIAN%20ARMY%20SOCIAL%20MEDIA%20PORTAL.jpeg",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ]
-};
+    /* --- लॉगिन बैकग्राउंड पर 3D Glass Sweep Effect --- */
+    #loginPage::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 80%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); 
+        transform: skewX(-25deg);
+        animation: bgTrue3DShine 3s infinite;
+        z-index: 1; 
+        pointer-events: none; 
+    }
 
-const stringManifest = JSON.stringify(manifestData);
+    @keyframes bgTrue3DShine {
+        0% { left: -150%; }
+        40% { left: 150%; }
+        100% { left: 150%; }
+    }
 
-const blob = new Blob(
-    [stringManifest],
-    {type: 'application/json'}
-);
+    .login-box {
+        position: absolute;
+        bottom: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 340px;
+        padding: 22px;
+        border-radius: 14px;
+        background: rgba(0,0,0,0.72);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255,255,255,0.15);
+        z-index: 10;
+    }
 
-const manifestURL = URL.createObjectURL(blob);
+    .login-box input {
+        width: 100%;
+        padding: 13px;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        margin-bottom: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
 
-document.querySelector('#manifest-placeholder')
-.setAttribute('href', manifestURL);
+    .login-box button {
+        width: 100%;
+        padding: 13px;
+        border: none;
+        border-radius: 8px;
+        background: linear-gradient(90deg,#1d4ed8,#ef4444);
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+    }
 
-/* HIDE URL BAR */
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        window.scrollTo(0,1);
-    },100);
-});
+    .footer {
+        position: absolute;
+        bottom: 18px;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 13px;
+        opacity: 0.7;
+    }
 
-</script>
+    /* LOADER */
+    #loading {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        z-index: 999999;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;
+    }
 
-</body>
-</html>
+    .spin {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255,255,255,0.2);
+        border-top: 4px solid #fff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 15px;
+    }
 
+    @keyframes spin {
+        100% { transform: rotate(360deg); }
+    }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+    /* DASHBOARD */
+    #dashboard {
+        display: none;
+        width: 100%;
+        min-height: 100dvh;
+        background: url('https://media.istockphoto.com/id/1297933144/vector/vector-illustration-of-indian-tricolor-flag-background.jpg?s=612x612&w=0&k=20&c=tCd-ZdLMNHw_KAMZTX9zStqEDdWzXlS6FYrvjrZIswk=');
+        background-size: cover;
+        background-position: center;
+        padding-bottom: 8px;
+        overflow-x: hidden;
+    }
 
-<meta name="viewport"
-content="width=device-width,
-initial-scale=1.0,
-maximum-scale=1.0,
-user-scalable=no,
-viewport-fit=cover">
+    /* TOPBAR - FIXED TO PREVENT SCROLL BLEED */
+    .topbar {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 99999;
+        background: #fff;
+        padding: calc(16px + env(safe-area-inset-top)) 16px 16px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
 
-<title>Military Security Portal</title>
+    .content {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+        background: rgba(255,255,255,0.92);
+    }
 
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-touch-fullscreen" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Security Portal">
+    .officer {
+        text-align: center;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative; /* Added for absolute positioning of story circle */
+    }
 
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#0f172a">
+    .officer img {
+        width: 210px;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 4px solid #ddd;
+        margin: 18px auto 0 auto;
+    }
 
-<link rel="apple-touch-icon"
-href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4JLBaxBZdX0d_mMM2Ee00Na_0hy2n9u5A4cUnYVTjlqLeVb7tdpUtH7CI3rkixJpRoaDQEa9zG1wVi78mHvaRr8cK5XCtCPs8tERtJTTYWHzOrDimAg1q6QdYu3WegPP3dCUDpgRDOt_NpxasLo7xvjT73wDNw5hbk6P7o4VOpV-TvVGREX_Qu-RUFFQl/s512/INDIAN%20ARMY%20SOCIAL%20MEDIA%20PORTAL.jpeg">
+    /* STORY CIRCLE & POPUP CSS */
+    .story-circle {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #D90000, #000080);
+        padding: 3px;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .story-circle-inner {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 9px;
+        font-weight: 700;
+        color: #000080;
+        text-align: center;
+        line-height: 1.2;
+    }
+    .story-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.92);
+        z-index: 9999999;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .story-progress-container {
+        position: absolute;
+        top: 15px;
+        left: 5%;
+        width: 90%;
+        height: 4px;
+        background: rgba(255,255,255,0.3);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+    .story-progress-bar {
+        height: 100%;
+        width: 100%;
+        background: #fff;
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+    .story-progress-bar.active {
+        animation: storyLoad 10s linear forwards;
+    }
+    @keyframes storyLoad {
+        from { transform: scaleX(0); }
+        to { transform: scaleX(1); }
+    }
+    .story-overlay.paused .story-progress-bar {
+        animation-play-state: paused;
+    }
+    .story-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .story-custom-table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+    .story-custom-table th, .story-custom-table td {
+        border: 1px solid #ddd;
+        padding: 12px 10px;
+        font-size: 13px;
+        text-align: left;
+        color: #333;
+    }
+    .story-custom-table th { background: #f3f4f6; width: 35%; font-weight: 700; }
 
-<link rel="manifest" href='data:application/manifest+json;charset=utf-8,{"name":"Military Security Portal","short_name":"Portal","display":"standalone","display_override":["fullscreen","standalone"],"orientation":"portrait","background_color":"#0f172a","theme_color":"#0f172a","start_url":"./","icons":[{"src":"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4JLBaxBZdX0d_mMM2Ee00Na_0hy2n9u5A4cUnYVTjlqLeVb7tdpUtH7CI3rkixJpRoaDQEa9zG1wVi78mHvaRr8cK5XCtCPs8tERtJTTYWHzOrDimAg1q6QdYu3WegPP3dCUDpgRDOt_NpxasLo7xvjT73wDNw5hbk6P7o4VOpV-TvVGREX_Qu-RUFFQl/s512/INDIAN%20ARMY%20SOCIAL%20MEDIA%20PORTAL.jpeg","sizes":"512x512","type":"image/png"}]}'>
+    .table-box {
+        overflow-x: auto;
+        margin-top: 28px;
+    }
 
-<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-/* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
--webkit-user-select:none;
-user-select:none;
--webkit-touch-callout:none;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-}
+    table td {
+        padding: 14px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+    }
+
+    table td:first-child {
+        background: #f3f4f6;
+        font-weight: 700;
+        width: 32%;
+    }
+
+    .td-flex {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        vertical-align: middle;
+    }
+    .td-flex img {
+        width: 16px;
+        height: 16px;
+        object-fit: contain;
+    }
+
+    /* BUTTONS */
+    .btn-row {
+        display: flex;
+        gap: 6px;
+        margin-top: 14px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row !important;
+        width: 100%;
+    }
+
+    .action-btn {
+        flex: 1;
+        padding: 8px 4px;
+        border: none;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .action-btn svg { width: 12px !important; height: 12px !important; }
+    .red { background: #D90000; }
+    .blue { background: #000080; }
+    .sky { background: #4CC7FC; }
+
+    /* ACCORDION */
+    .accordion {
+        margin-top: 16px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .acc-head {
+        padding: 18px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        background: #fff;
+    }
+
+    .acc-body {
+        display: none;
+        padding: 18px;
+        border-top: 1px solid #eee;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .footer2 {
+        margin-top: 35px;
+        background: #c1121f;
+        padding: 18px;
+        color: #fff;
+        text-align: center;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer2 img {
+        margin: 0 auto 10px auto;
+    }
+
+    /* BOTTOM FIXED TRICOLOR STRIPE WITH SCROLL */
+    #tricolorStripe {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        z-index: 10000;
+        background: linear-gradient(to right, #D90000 33.33%, #000080 33.33%, #000080 66.66%, #4CC7FC 66.66%);
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    }
+
+    @media(max-width:768px) {
+        .login-box { width: 92%; }
+        .btn-row { display: flex; flex-direction: row !important; gap: 4px; }
+        .action-btn { width: auto; font-size: 9px; padding: 8px 2px; }
+        .officer img { width: 180px; height: 240px; }
+        table td { font-size: 13px; padding: 10px; }
+        .loader-text { font-size: 16px; }
+    }
+
+    /* सुरक्षित बटन कंटेनर */
+    .custom-btn-container {
+        width: 100%;
+        max-width: 400px;
+        margin: 10px auto;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .custom-btn-container .my-button-row {
+        display: flex !important;
+        gap: 20px !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .custom-btn-container .my-popup-btn {
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        padding: 10px 5px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        white-space: nowrap !important;
+        transition: transform 0.2s, box-shadow 0.2s !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.12) !important;
+        box-sizing: border-box !important;
+    }
+
+    .custom-btn-container .my-popup-btn:hover {
+        transform: translateY(-2px) !important;
+    }
+
+    .custom-btn-container .my-popup-btn i { font-size: 13px !important; }
+
+    #popup-btn1 { background: linear-gradient(135deg, #D90000, #D90000) !important; }
+    #popup-btn2 { background: linear-gradient(135deg, #000080, #000080) !important; }
+    #popup-btn3 { background: linear-gradient(135deg, #4CC7FC, #4CC7FC) !important; }
+
+    /* फुल स्क्रीन पॉप-अप ओवरले */
+    .my-modal-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.85) !important;
+        backdrop-filter: blur(5px) !important;
+        display: none;
+        justify-content: center !important;
+        align-items: center !important;
+        z-index: 999999 !important;
+        box-sizing: border-box !important;
+    }
+
+    .my-modal-content {
+        position: relative !important;
+        background: transparent !important;
+        padding: 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 95% !important;
+        max-width: 400px !important;
+        box-sizing: border-box !important;
+    }
+
+    .my-close-btn {
+        position: absolute !important;
+        top: -45px !important;
+        right: 10px !important;
+        color: white !important;
+        font-size: 32px !important;
+        cursor: pointer !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    /* 3D Flip Card */
+    .my-flip-card {
+        background-color: transparent !important;
+        width: 100% !important;
+        max-width: 336px !important; 
+        aspect-ratio: 85.6 / 53.98 !important;
+        perspective: 1000px !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+    }
+
+    .my-flip-card-inner {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        text-align: center !important;
+        transition: transform 0.5s !important;
+        transform-style: preserve-3d !important;
+    }
+
+    .my-flip-card.flipped .my-flip-card-inner {
+        transform: rotateY(180deg) !important;
+    }
+
+    .my-flip-card-front, .my-flip-card-back {
+        position: absolute !important;
+        width: 100% !important;
+        height: 100% !important;
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    }
+
+    .my-flip-card-front img, .my-flip-card-back img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: fill !important;
+    }
+
+    .my-flip-card-back {
+        transform: rotateY(180deg) !important;
+    }
+
+    /* PDF PORTAL */
+    .pdf-portal-container {
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 10px auto !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .pdf-portal-container .pdf-btn-row {
+        display: flex !important;
+        gap: 10px !important;
+        justify-content: space-between !important;
+        width: 80% !important;
+        margin-left: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    .pdf-portal-container .pdf-small-btn {
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        padding: 8px 4px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        white-space: nowrap !important;
+        transition: transform 0.2s !important;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.15) !important;
+        box-sizing: border-box !important;
+    }
+
+    .pdf-portal-container .pdf-small-btn:hover {
+        transform: translateY(-2px) !important;
+    }
+
+    @media screen and (max-width: 480px) {
+        .pdf-portal-container { max-width: 100% !important; padding: 8px !important; }
+        .pdf-portal-container .pdf-btn-row { width: 90% !important; margin-left: 15px !important; gap: 8px !important; }
+        .pdf-portal-container .pdf-small-btn { font-size: 12px !important; padding: 7px 3px !important; }
+    }
+
+    #pdf-btn1 { background: linear-gradient(135deg, #ff3333, #bd0000) !important; }
+    #pdf-btn2 { background: linear-gradient(135deg, #0088cc, #005580) !important; }
+    #pdf-btn3 { background: linear-gradient(135deg, #2ecc71, #27ae60) !important; }
+
+    .pdf-a4-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(26, 26, 26, 0.9) !important;
+        display: none;
+        justify-content: center !important;
+        align-items: center !important;
+        z-index: 999999 !important;
+        padding: 40px 10px 10px 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .pdf-a4-content {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 450px !important;
+        height: 80vh !important;
+        max-height: 636px !important;
+        background: white !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.6) !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .pdf-a4-content iframe {
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+        display: block !important;
+    }
+
+    .pdf-a4-close-btn {
+        position: absolute !important;
+        top: -45px !important;
+        right: 0px !important;
+        color: #ff3333 !important;
+        background: #ffffff !important;
+        width: 32px !important;
+        height: 32px !important;
+        border-radius: 50% !important;
+        font-size: 22px !important;
+        font-weight: bold !important;
+        cursor: pointer !important;
+        border: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        line-height: 1 !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+        transition: background 0.2s, color 0.2s !important;
+        z-index: 1000000 !important;
+    }
+
+    .pdf-a4-close-btn:hover {
+        background: #ff3333 !important;
+        color: #ffffff !important;
+    }
+
+    /* DUTY CHART POPUP */
+    .duty-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: 100005;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+    }
+    .duty-box {
+        background: #ffffff;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        animation: zoomIn 0.3s ease;
+    }
+    .duty-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #000080;
+        text-align: center;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        border-bottom: 2px solid #f3f4f6;
+        padding-bottom: 8px;
+    }
+    .duty-table { width: 100%; border-collapse: collapse; }
+    .duty-table th { background: #f3f4f6; color: #333; font-weight: 700; font-size: 12px; padding: 10px 8px; text-align: left; border: 1px solid #ddd; }
+    .duty-table td { padding: 10px 8px; border: 1px solid #ddd; font-size: 12px; color: #333; }
+    .duty-table tr:nth-child(even) { background: #fafafa; }
+
+    /* BRANCH SELECTION */
+    #branchSelectionPage {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99990; 
+        overflow: hidden;
+    }
+    .branch-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj67fZP-xf74qWzVl-1Mm5dANE5hSLgy15zwQwpJCYRJyP_EDy0f4WZxrtuvLuK1xqI8kM6iYwabSw8Ao_zsU7FzVxgXanUIb77Bvdfu77jj5mUpLhQADrH57ToyhFSnpYQEzbNXBIRwe0tGKkFLK8DMwTGy21qN0z-eAMeFlwIAfPdqqL-p_Tl14u15K6x/s1920/Add%20a%20heading.jpeg') center/cover;
+    }
+    .branch-box {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 432px;
+        padding: 22px;
+        border-radius: 14px;
+        background: rgba(0,0,0,0.72);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255,255,255,0.15);
+    }
+    .custom-dropdown-container {
+        position: relative;
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+    }
+    .custom-dropdown-header {
+        width: 100%;
+        padding: 13px;
+        background: #fff;
+        border-radius: 8px;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        color: #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .custom-dropdown-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border-radius: 8px;
+        margin-top: 8px;
+        overflow: hidden;
+        display: none;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        z-index: 10;
+    }
+    .custom-dropdown-list.show { display: block; }
+
+    /* 3D GLASS SWEEP EFFECT CSS (ड्रॉपडाउन आइकॉन्स के लिए) */
+    .glass-sweep {
+        position: relative;
+        overflow: hidden;
+    }
+    .glass-sweep::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0) 100%);
+        transform: skewX(-25deg);
+        animation: true3DShine 2s infinite;
+        z-index: 2;
+        pointer-events: none;
+    }
+    @keyframes true3DShine {
+        0% { left: -150%; }
+        40% { left: 150%; }
+        100% { left: 150%; }
+    }
+
+    .icon-shine-wrap {
+        width: 26px;  
+        height: 26px;
+        margin-right: 12px;
+        border-radius: 50%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3); 
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .icon-shine-wrap img { width: 100%; height: 100%; object-fit: contain; }
+
+    .custom-dropdown-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 15px;
+        cursor: pointer;
+        font-weight: 600;
+        color: #333;
+        border-bottom: 1px solid #eee;
+        transition: background 0.2s;
+    }
+    .custom-dropdown-item:last-child { border-bottom: none; }
+    .custom-dropdown-item:hover { background: #f1f1f1; }
+
+    /* GIF LOADER SCREEN (4 सेकेंड के लिए) */
+    #branchGifLoader {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        z-index: 999999;
+        justify-content: center;
+        align-items: center;
+    }
+    #branchGifLoader img { width: 200px; height: 230px; object-fit: contain; }
+
+    /* Back To Login Button */
+    .back-to-branch-btn {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 15px;
+        animation: backBtnAnim 2s infinite;
+    }
+    @keyframes backBtnAnim {
+        0% { transform: translateY(0px); opacity: 0.8; }
+        50% { transform: translateY(3px); opacity: 1; text-shadow: 0 0 8px rgba(255,255,255,0.8); }
+        100% { transform: translateY(0px); opacity: 0.8; }
+    }
 
 /* FULLSCREEN FIX */
-html{
-height:-webkit-fill-available;
-}
-
-body{
-width:100%;
-height:100%;
-min-height:100vh;
-min-height:-webkit-fill-available;
-overflow:hidden;
-background:#0f172a;
--webkit-tap-highlight-color:transparent;
-overscroll-behavior:none;
-touch-action:manipulation;
-}
-
-/* REMOVE IOS SAFARI GAPS */
-@supports (-webkit-touch-callout: none) {
-body,
-.app-screen{
-height:-webkit-fill-available;
-}
-}
-
-/* APP SCREEN */
-.app-screen{
-display:none;
-position:fixed;
-inset:0;
-width:100vw;
-height:100dvh;
-overflow-x:hidden;
-overflow-y:auto;
-background:#ffffff;
-}
-
-.active-screen{
-display:flex;
-flex-direction:column;
-}
-
-/* PRELOADER */
-#preloader{
-position:fixed;
-inset:0;
-width:100vw;
-height:100dvh;
-background:#ffffff;
-z-index:9999;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.preload-logo{
-width:300px;
-height:150px;
-background:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgu6DTrVvuR78p78FZgJW3GkZnkR8Pter4mmlc-lNAwlR5BrcOJxh74-WeVI_pE7ul4cmJWj3k4yOc4YAm_ObnyuGkosBwCmdN02pcFgRu66Ja0hAsY9Ri3BlMsOmdSy4zd0uIJul0PX8M_eyvJvY0h8GIP1XoV6VcLMT2A-EuX6R1jkb053tQVeYkVLBIR/s512/INDIAN%20ARMY%20SOCIAL%20MEDIA%20PORTAL.png') no-repeat center center;
-background-size:contain;
-animation:logoAnim 1.5s infinite alternate;
-}
-
-@keyframes logoAnim{
-0%{ transform:scale(0.95); }
-100%{ transform:scale(1.05); }
-}
-
-/* HEADER IMAGE */
-.header-image-container{
-width:100%;
-overflow:hidden;
-margin-top: 45px; 
-}
-
-.header-image-container img{
-width:100%;
-display:block;
-object-fit:cover;
-max-height:280px;
-}
-
-/* NOTICE */
-.notice-box{
-padding:15px;
-font-size:11px;
-line-height:1.5;
-background:#f8fafc;
-color:#111827;
-text-align:justify;
-}
-
-.notice-box strong{
-color:#cc0000;
-}
-
-/* LOGIN FORM */
-.login-form{
-padding:25px 20px;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.input-group{
-display:flex;
-flex-direction:column;
-gap:5px;
-}
-
-.input-group label{
-font-size:13px;
-font-weight:bold;
-color:#111827;
-}
-
-.input-group input{
-width:100%;
-padding:15px;
-border:2px solid #000;
-outline:none;
-font-size:16px;
-border-radius:5px;
-font-weight:bold;
-}
-
-/* BUTTON */
-.btn-login{
-width:100%;
-padding:15px;
-background:#cc0000;
-color:#fff;
-border:none;
-border-radius:5px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* FOOTER */
-.footer-text{
-margin-top:auto;
-padding:20px;
-text-align:center;
-font-size:11px;
-color:#64748b;
-}
-
-/* ERROR */
-.error-toast{
-position:fixed;
-bottom:100px;
-left:50%;
-transform:translateX(-50%);
-width:90%;
-background:#ef4444;
-color:#fff;
-padding:14px;
-text-align:center;
-font-size:13px;
-font-weight:bold;
-border-radius:10px;
-display:none;
-z-index:10000;
-}
-
-/* DASHBOARD */
-.red-header{
-background:#e60000;
-color:#fff;
-padding:45px 15px 15px 15px;
-text-align:center;
-font-size:18px;
-font-weight:bold;
-}
-
-.profile-section{
-display:flex;
-align-items:center;
-gap:12px;
-padding:15px;
-border-bottom:1px solid #e5e7eb;
-}
-
-.profile-img{
-width:55px;
-height:55px;
-border-radius:8px;
-object-fit:cover;
-}
-
-.profile-info h3{
-font-size:14px;
-}
-
-.profile-info span{
-color:#e60000;
-}
-
-.profile-info p{
-font-size:11px;
-color:#64748b;
-margin-top:2px;
-}
-
-.btn-activate{
-margin-left:auto;
-padding:7px 14px;
-border:none;
-border-radius:15px;
-background:#22c55e;
-color:#fff;
-font-size:10px;
-font-weight:bold;
-}
-
-/* UNIT */
-.unit-mobile-text{
-padding:12px 15px;
-font-size:13px;
-}
-
-/* GRID */
-.grid-container{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px;
-padding:25px;
-}
-
-.grid-item{
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:10px;
-cursor:pointer;
-}
-
-.icon-box-3d{
-width:85px;
-height:85px;
-background:#fff;
-border-radius:20px;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-}
-
-.icon-box-3d img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.grid-item span{
-font-size:12px;
-font-weight:bold;
-}
-
-/* DISCLAIMER */
-.info-disclaimer{
-margin:20px 15px;
-padding:15px;
-background:#cbd5e1;
-font-size:11px;
-line-height:1.5;
-border-radius:8px;
-text-align:justify;
-}
-
-/* LOGOUT */
-.btn-logout{
-margin:0 auto 30px auto;
-padding:10px 25px;
-border:none;
-border-radius:20px;
-background:#ef4444;
-color:#fff;
-font-size:12px;
-font-weight:bold;
-}
-
-/* DIAL PAD & OVERLAYS */
-.dialpad-overlay{
-position:fixed;
-inset:0;
-width:100vw;
-height:100dvh;
-background:rgba(0,0,0,0.7);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-.dialpad-container{
-width:90%;
-max-width:360px;
-background:#1e293b;
-padding:20px;
-border-radius:25px;
-}
-
-.dialpad-display{
-width:100%;
-padding:15px;
-background:#0f172a;
-border:none;
-outline:none;
-border-radius:10px;
-font-size:28px;
-font-weight:bold;
-text-align:center;
-color:#22c55e;
-margin-bottom:20px;
-}
-
-.dialpad-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-}
-
-.dial-btn{
-width:65px;
-height:65px;
-border:none;
-border-radius:50%;
-background:#334155;
-color:#fff;
-font-size:24px;
-font-weight:bold;
-margin:auto;
-}
-
-.call-action{ background:#22c55e; }
-.close-action{ background:#ef4444; }
-
-/* SOCIAL LOGIN */
-.social-login-wrapper{
-margin:auto 0;
-padding:20px 0;
-}
-
-.social-logo-header{
-display:flex;
-justify-content:center;
-padding-bottom:25px;
-}
-
-.social-logo-header img{
-height:50px;
-}
-
-.social-form{
-padding:0 25px;
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-.social-form input{
-width:100%;
-padding:15px;
-border:1px solid #d1d5db;
-background:#f8fafc;
-border-radius:5px;
-outline:none;
-font-size:14px;
-}
-
-.btn-social-submit{
-width:100%;
-padding:15px;
-border:none;
-border-radius:5px;
-color:#fff;
-font-size:14px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.social-footer-support{
-padding:0 20px 40px;
-text-align:center;
-font-size:10px;
-line-height:1.6;
-color:#64748b;
-font-weight:bold;
-}
-
-.social-footer-support a{
-text-decoration:none;
-color:#0284c7;
-}
-
-/* ================== NEW ASIGMA CHAT UI CSS ================== */
-
-.asigma-container {
-    background: #ffffff;
+#preloader,
+#branchSelectionPage,
+#loginPage,
+.branch-bg {
+    position: fixed;
+    inset: 0;
     width: 100%;
-    min-height: 100vh;
-
-    padding:
-    calc(env(safe-area-inset-top) + 35px)
-    20px
-    30px
-    20px;
-
-    color: #000;
+    height: 100%;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    background-color: #000 !important;
 }
 
-.asigma-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
+/* सभी background images properly fit हों */
+#preloader,
+#loginPage,
+.branch-bg,
+#dashboard {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
 }
-.asigma-title-small {
-    font-size: 11px;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: -2px;
-}
-.asigma-title-large {
-    font-size: 38px;
-    font-weight: 900;
-    color: #000;
-    letter-spacing: -1px;
-    line-height: 1.1;
-}
-.asigma-top-icon {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    /* Gradient to mimic the blue texture in the photo */
-    background: radial-gradient(circle, #8ac0ce 20%, #4b92a3 80%);
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
-}
-.asigma-search-bar {
-    background: #f4f4f4;
-    border-radius: 8px;
-    padding: 12px 15px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.asigma-search-bar svg {
-    fill: #888;
-    margin-right: 10px;
-}
-.asigma-search-bar input {
-    border: none;
-    background: transparent;
-    outline: none;
+
+/* iPhone bottom white area fix */
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -50px;
+    left: 0;
     width: 100%;
-    font-size: 16px;
-    color: #333;
-}
-.asigma-disclaimer-text {
-    font-size: 10px;
-    font-weight: 800;
-    text-align: justify;
-    line-height: 1.5;
-    margin-bottom: 30px;
-    color: #111;
-}
-.asigma-chat-list {
-    display: flex;
-    flex-direction: column;
-}
-.asigma-chat-item {
-    display: flex;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #eaeaea;
-}
-.asigma-avatar {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    background: #ccc;
-}
-.asigma-chat-details {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-.asigma-chat-name {
-    font-size: 16px;
-    font-weight: 700;
-    color: #000;
-}
-.asigma-btn-open {
-    background: #f03e3e;
-    color: #fff;
-    border: none;
-    padding: 3px 8px;
-    font-size: 10px;
-    font-weight: 800;
-    border-radius: 3px;
-    width: fit-content;
-    cursor: pointer;
-}
-.asigma-lock-icon {
-    margin-left: auto;
-}
-.asigma-btn-back-container {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.asigma-btn-back {
-    background: #f03e3e;
-    color: #fff;
-    border: none;
-    padding: 12px 35px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 25px;
-    cursor: pointer;
+    height: 80px;
+    background: #000;
+    z-index: 999999999;
+    pointer-events: none;
 }
 
-
-/* ASIGMA PRELOADER LOGO */
-
-.asigma-preload-logo{
-width:220px;
-height:220px;
-
-background:url('https://your-image-link.png') no-repeat center center;
-
-background-size:contain;
-
-animation:asigmaPulse 1.5s infinite alternate;
+/* Safari safe-area remove */
+@supports (padding: max(0px)) {
+    body,
+    html {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 }
-
-@keyframes asigmaPulse{
-0%{
-transform:scale(0.95);
-opacity:0.8;
-}
-100%{
-transform:scale(1.05);
-opacity:1;
-}
-}
-
-</style>
+    </style>
 </head>
 
-<body>
+<body oncontextmenu="return false">
 
 <div id="preloader">
-<div class="preload-logo"></div>
+    <div class="logo-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_the_Indian_Armed_Forces.svg/3840px-Flag_of_the_Indian_Armed_Forces.svg.png" alt="Preloader Image">
+    </div>
+    <div class="loader-text">INDIAN ARMED FORCES</div>
 </div>
 
-<div id="screen-login" class="app-screen active-screen">
-<div class="header-image-container">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8SvDIvWPZeWu4Va2EgBvbA0mC4qkgE557HHpqAb91gDZrDZUVycxn-KruXyGtZhEIupMC_W_UBGphSnMkDMvSLN6jRAjCYRrZiXdQrtKy8eoy4yuKIibzwthU4ZP-lmLiwUPmxMej_PhqyhIHCrPjR921uL_vrQcydfkyQpSX871iVb0dYmf4Yqv5nFT5/s960/HQ%20INDIAN%20ARMY.jpeg">
-</div>
-<div class="notice-box">
-<strong>NOTICE :</strong>
-This portal is an official social media platform for Commissioned Officers of the Indian Army.
-</div>
-<div class="login-form">
-<div class="input-group">
-<label>Secret Code</label>
-<input type="password" id="pass1">
-</div>
-<div class="input-group">
-<label>Service ID</label>
-<input type="password" id="pass2">
-</div>
-<button class="btn-login" onclick="validateIdentitySystem()">
-LOGIN
-</button>
-</div>
-<div id="login-error" class="error-toast">
-Invalid Identification Credentials
-</div>
-<div class="footer-text">
-Integrated within Signals Directorate, New Delhi
-</div>
-</div>
-
-<div id="screen-dashboard" class="app-screen">
-<div class="red-header">
-Selected Social Networking
-</div>
-<div class="profile-section">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCHloBHTkY8lAYNgE2CFaQOfVCH5jD9S3Y5EdnNKmLM3-n0Uv6wphxOW8ZmNw_frMef_XJ2RhyaELuYiZ7VqMQIhFJU6PdSsHUHIBWbklZZo_Qr5IX98Dk3BujZljBTAtO7PYS-5TaF8Ju36QeUfBQB-52lBDnRRNMtsTBr8gz8l4WetEL-Q9HUj6EwlO4/s523/Untitled%20design.jpeg"
-class="profile-img">
-<div class="profile-info">
-<h3>Welcome <span>Capt. Manish</span></h3>
-<p>18 Dogra , SO2 (OPS) HQ I Corps</p>
-</div>
-<button class="btn-activate">
-ACTIVATE
-</button>
-</div>
-<div class="unit-mobile-text">
-Unit Register Mobile No. -
-<strong>(+91) 8445936510</strong>
-</div>
-
-<div class="grid-container">
-<div class="grid-item" onclick="openScreen('screen-facebook')">
-<div class="icon-box-3d">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg">
-</div>
-<span>FACEBOOK</span>
-</div>
-
-<div class="grid-item" onclick="openScreen('screen-instagram')">
-<div class="icon-box-3d">
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg">
-</div>
-<span>INSTAGRAM</span>
-</div>
-
-<div class="grid-item" onclick="launchWhatsAppDirectly()">
-<div class="icon-box-3d">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-</div>
-<span>WHATSAPP</span>
-</div>
-
-<div class="grid-item" onclick="toggleDialPad(true)">
-<div class="icon-box-3d">
-<img src="https://images.vexels.com/media/users/3/137415/isolated/preview/0e475bb9b17b3fa4f94f31fba1635b8f-telephone-call-icon-logo.png?w=360">
-</div>
-<span>PHONE CALL</span>
-</div>
-
-<div class="grid-item" onclick="startAsigmaFlow()">
-<div class="icon-box-3d" style="background:#e5e7eb;">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMCbirO-znaQYP16-rfU0KlnqCTDZGx3md4k-_l8UcfjJ3vxUsxmLpMRXJvf0cuXlzI_LahdqQlXt_mycX_S4PDIedh7W7FKYIIJKXgMLkjpO6t9Avjl6m0hzwkt138z_pF5py3_mgJY9fJBuZa-TNzfbyn0v-Dm5FsJacAmg0q2OP6rNlxOwsAfJA-yuH/s512/INDIAN%20ARMY%20SOCIAL%20MEDIA%20PORTAL.png">
-</div>
-<span>ASIGMA</span>
-</div>
-
-</div>
-
-<div class="info-disclaimer">
-This social media application has been officially activated under military security protocols after obtaining authorization from the Military Intelligence Department.
-</div>
-<button class="btn-logout" onclick="openScreen('screen-login')">
-LOGOUT
-</button>
-</div>
-
-<div id="screen-asigma-preloader" class="app-screen">
-<div style="width:100%; height:100%; background:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPZtD3F8sRGiy7ciCHm6P6gO_Im-FKSSAd2lg4J-2cXZMZ3W9V0VXQDFVr6FmF9gdesNn0GJmCpLn9AMrCVdsGf4bMnNY-qJwGcqBeOILy2Sp55thJ5qtnhABRYrfyTumSiEJDkIe239duam2FXQty44_r5q1iJJgylakhBKOJyf5ZkMp7sCGZPry1oWnb/s1792/ASIGMA.jpeg') center center no-repeat; background-size:cover; display:flex; justify-content:center; align-items:center;">
-    
-    <div class="asigma-preload-logo"></div>
-
-</div>
-</div>
-
-<div id="screen-asigma-main" class="app-screen">
-    <div class="asigma-container">
-        
-        <div class="asigma-header">
-            <div>
-                <div class="asigma-title-small">INDIAN ARMED FORCES</div>
-                <div class="asigma-title-large">ASIGMA</div>
+<div id="branchSelectionPage">
+    <div class="branch-bg"></div>
+    <div class="branch-box">
+        <div style="color:#fff; text-align:center; margin-bottom:15px; font-weight:700; font-size:18px;">BRANCH / SERVICE</div>
+        <div class="custom-dropdown-container">
+            <div class="custom-dropdown-header" onclick="toggleBranchDropdown()">
+                <span>Select Armed Forces</span>
+                <i class="fa-solid fa-caret-down"></i>
             </div>
-            <div class="asigma-top-icon"></div>
+            <div class="custom-dropdown-list" id="branchList">
+                <div class="custom-dropdown-item" onclick="goToLogin('ARMY')">
+                    <div class="icon-shine-wrap glass-sweep"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Indian_Army_Insignia_circular.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Army"></div>
+                    INDIAN ARMY
+                </div>
+                <div class="custom-dropdown-item" onclick="goToLogin('NAVY')">
+                    <div class="icon-shine-wrap glass-sweep"><img src="https://www.joinindiannavy.gov.in/images/octaginal-crest.png" alt="Navy"></div>
+                    INDIAN NAVY
+                </div>
+                <div class="custom-dropdown-item" onclick="goToLogin('AIRFORCE')">
+                    <div class="icon-shine-wrap glass-sweep"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Badge_of_the_Indian_Air_Force.png" alt="Air Force"></div>
+                    INDIAN AIR FORCE
+                </div>
+            </div>
         </div>
-
-     
-
-        <div class="asigma-disclaimer-text">
-            All Chats Available Within This Portal Are Classified As Strictly Confidential And Secure. Authorized Password Authentication Is Mandatory To Access Each Individual Chat. Opening Or Viewing Any Chat Without Valid Authentication Is Strictly Prohibited.
-        </div>
-
-        <div class="asigma-chat-list">
-            
-            <div class="asigma-chat-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Krishna_with_flute.jpg/220px-Krishna_with_flute.jpg" class="asigma-avatar">
-                <div class="asigma-chat-details">
-                    <div class="asigma-chat-name">Chauhan Store</div>
-                    <button class="asigma-btn-open" onclick="openAsigmaPwd()">OPEN CHAT</button>
-                </div>
-                <div class="asigma-lock-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M12 2C9.243 2 7 4.243 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7c0-2.757-2.243-5-5-5zm-3 5c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9V7zm3 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
-                </div>
-            </div>
-
-            <div class="asigma-chat-item">
-                <img src="https://i.pravatar.cc/150?img=11" class="asigma-avatar">
-                <div class="asigma-chat-details">
-                    <div class="asigma-chat-name">Lakhan Sir</div>
-                    <button class="asigma-btn-open" onclick="openAsigmaPwd()">OPEN CHAT</button>
-                </div>
-                <div class="asigma-lock-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M12 2C9.243 2 7 4.243 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7c0-2.757-2.243-5-5-5zm-3 5c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9V7zm3 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
-                </div>
-            </div>
-
-            <div class="asigma-chat-item">
-                <img src="https://i.pravatar.cc/150?img=32" class="asigma-avatar">
-                <div class="asigma-chat-details">
-                    <div class="asigma-chat-name">kunal Sir</div>
-                    <button class="asigma-btn-open" onclick="openAsigmaPwd()">OPEN CHAT</button>
-                </div>
-                <div class="asigma-lock-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M12 2C9.243 2 7 4.243 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7c0-2.757-2.243-5-5-5zm-3 5c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9V7zm3 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
-                </div>
-            </div>
-
-            <div class="asigma-chat-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Durga_Mahisasuramardini.jpg/220px-Durga_Mahisasuramardini.jpg" class="asigma-avatar">
-                <div class="asigma-chat-details">
-                    <div class="asigma-chat-name">sarthak Laddo</div>
-                    <button class="asigma-btn-open" onclick="openAsigmaPwd()">OPEN CHAT</button>
-                </div>
-                <div class="asigma-lock-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M12 2C9.243 2 7 4.243 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7c0-2.757-2.243-5-5-5zm-3 5c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9V7zm3 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
-                </div>
-            </div>
-
-            <div class="asigma-chat-item">
-                <img src="https://i.pravatar.cc/150?img=12" class="asigma-avatar">
-                <div class="asigma-chat-details">
-                    <div class="asigma-chat-name">Badal Sir</div>
-                    <button class="asigma-btn-open" onclick="openAsigmaPwd()">OPEN CHAT</button>
-                </div>
-                <div class="asigma-lock-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M12 2C9.243 2 7 4.243 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7c0-2.757-2.243-5-5-5zm-3 5c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9V7zm3 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="asigma-btn-back-container">
-            <button class="asigma-btn-back" onclick="openScreen('screen-dashboard')">BACK</button>
-        </div>
-
     </div>
 </div>
 
-<div id="asigma-pwd-modal" class="dialpad-overlay">
-    <div class="dialpad-container" style="background:#ffffff; text-align:center;">
-        <h3 style="margin-bottom:15px; font-size:18px; color:#111827;">ENTER PASSWORD</h3>
-        <input type="password" id="asigma-pwd-input" placeholder="Password" style="width:100%; padding:15px; border:2px solid #000; border-radius:5px; font-size:16px; font-weight:bold; text-align:center; margin-bottom:20px; outline:none;">
-        <button onclick="checkAsigmaPwd()" style="width:100%; padding:15px; background:#cc0000; color:#fff; border:none; border-radius:5px; font-size:16px; font-weight:bold; cursor:pointer;">SUBMIT</button>
-        <button onclick="closeAsigmaPwd()" style="width:100%; padding:12px; background:#cbd5e1; color:#111827; border:none; border-radius:5px; font-size:14px; font-weight:bold; cursor:pointer; margin-top:12px;">CANCEL</button>
+<div id="branchGifLoader">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgld2AVe57NTcm9Lu0r-9SMHFHvQVCpCwuiS4t6rdZZ8HFk79DVFKm7rcWnE4vT6HjisZTQ1bDNhnfNoWnucFtbgIYWv3OdkXgDOgxQ5Ojr8J4GqFgjWjA45FvePdvXp1QWC76qVaF1jp0FSsmrFJvDDC2N64RgRWFbHJfliU5znXaCsKRppNQj77rcPgyI/s256/Video.gif" alt="Loading...">
+</div>
+
+<div id="loginPage">
+    <div class="login-box">
+        <div id="error" style="display:none;color:#ff4d4d;font-size:12px;margin-bottom:10px;font-weight:700;text-align:center;">
+            NO RECORD FOUND
+        </div>
+        <input type="text" id="serviceID" placeholder="ENTER SERVICE ID">
+        <button onclick="loginNow()">PROCEED</button>
+        <div style="text-align: center;">
+            <div class="back-to-branch-btn" onclick="backToBranch()">BACK TO LOGIN</div>
+        </div>
     </div>
 </div>
 
-<div id="asigma-error" class="error-toast" style="bottom:50%;">
-    Incorrect Password!
+<div id="loading">
+    <div class="spin"></div>
+    <div>AUTHENTICATING...</div>
 </div>
 
-<div id="dialpad-modal" class="dialpad-overlay">
-<div class="dialpad-container">
-<input type="text"
-id="dial-screen"
-class="dialpad-display"
-readonly>
-<div class="dialpad-grid">
-<button class="dial-btn" onclick="pressDialKey('1')">1</button>
-<button class="dial-btn" onclick="pressDialKey('2')">2</button>
-<button class="dial-btn" onclick="pressDialKey('3')">3</button>
-<button class="dial-btn" onclick="pressDialKey('4')">4</button>
-<button class="dial-btn" onclick="pressDialKey('5')">5</button>
-<button class="dial-btn" onclick="pressDialKey('6')">6</button>
-<button class="dial-btn" onclick="pressDialKey('7')">7</button>
-<button class="dial-btn" onclick="pressDialKey('8')">8</button>
-<button class="dial-btn" onclick="pressDialKey('9')">9</button>
-<button class="dial-btn" onclick="pressDialKey('*')">*</button>
-<button class="dial-btn" onclick="pressDialKey('0')">0</button>
-<button class="dial-btn" onclick="pressDialKey('#')">#</button>
-<button class="dial-btn close-action"
-onclick="toggleDialPad(false)"> ✖ </button>
-<button class="dial-btn call-action"
-onclick="makeRealPhoneCall()"> 📞 </button>
-<button class="dial-btn"
-onclick="pressDialKey('clear')"> ⌫ </button>
-</div>
-</div>
+<div id="dashboard">
+    <div class="topbar">
+        <div class="flex items-center gap-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Flag_of_Indian_Army.svg/3840px-Flag_of_Indian_Army.svg.png" style="height:50px;">
+            <span style="font-size:12px;font-weight:700;"></span>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Ministry_of_Defence_India.svg" style="height:45px;">
+    </div>
+
+    <div class="content">
+        <div class="officer">
+            <div class="story-circle" onclick="openStory()">
+                <div class="story-circle-inner">DUTY<br>Schedule</div>
+            </div>
+            <br/><br/><br/>
+            <h2 style="font-size:28px;font-weight:700;margin-top:5px;">Capt. Manish Chaudhary</h2>
+            <p style="color:#555;margin-top:6px;">Yudh Seva Medal, Sena Medal,<br>COAS Commendation</p>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCHloBHTkY8lAYNgE2CFaQOfVCH5jD9S3Y5EdnNKmLM3-n0Uv6wphxOW8ZmNw_frMef_XJ2RhyaELuYiZ7VqMQIhFJU6PdSsHUHIBWbklZZo_Qr5IX98Dk3BujZljBTAtO7PYS-5TaF8Ju36QeUfBQB-52lBDnRRNMtsTBr8gz8l4WetEL-Q9HUj6EwlO4/s523/Untitled%20design.jpeg">
+        </div>
+
+        <div class="table-box">
+            <table>
+                <tr><td>Allegiance</td><td><span class="td-flex"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/20px-Flag_of_India.svg.png"> India</span></td></tr>
+                <tr><td>Branch</td><td><span class="td-flex"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Flag_of_Indian_Army.svg/3840px-Flag_of_Indian_Army.svg.png"> Indian Army</span></td></tr>
+
+                <tr><td>Years of Service</td><td>13 June 2020 – Present</td></tr>
+                <tr><td>Rank</td><td>Captain</td></tr>
+
+  <tr><td>Alma Mater </td><td> ➤ NDA (Bsc) <br/> ➤ IMA</td></tr>
+
+
+
+                <tr><td>Service ID</td><td>IC-80129D</td></tr>
+                <tr><td>Unit</td><td><span class="td-flex"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Dogra_Regiment.svg/1280px-Dogra_Regiment.svg.png"> 18 Dogra</span></td></tr>
+                <tr><td>First Posting</td><td>Platoon Commander, Delta Company, Northern Command HQ, Udhampur, Jammu & Kashmir<br><b>Year 2020 - 2023</b></td></tr>
+                <tr><td>Currently Deployed</td><td>Staff Officer Grade II Operations (SO2 OPS) HQ I Corps Strike 1 Mathura U.P<br><b>Year 2023 - Present</b></td></tr>
+                <tr><td>Conflicts</td><td>• OPS Sindoor<br>• OPS Mahadev<br>• OPS Jammu Drill<br>• Counter-Insurgency OPS<br>• POK Border OPS</td></tr>
+                <tr><td>Awards</td><td>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <span class="td-flex"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Yudh_Seva_Medal_ribbon.svg/1280px-Yudh_Seva_Medal_ribbon.svg.png"> Yudh Seva Medal</span>
+                        <span class="td-flex"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Sena_Medal_ribbon.svg/1280px-Sena_Medal_ribbon.svg.png"> Sena Medal</span>
+                        <span class="td-flex"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Army_Commander_Commendation_disc.png/1280px-Army_Commander_Commendation_disc.png"> COAS Commendation</span>
+                    </div>
+                </td></tr>
+
+ <tr><td>Next of Kin (NOK): </td><td> Dr Megha Khandelwal (Spouse)</td></tr>
+
+
+<tr><td> Relations </td><td><strong> Koushal Kishore </strong><br/>Retd. Subedar Major<br/> 23 JAT Regiment <br/>(Father) </td></tr>
+
+
+            </table>
+        </div>
+
+        <div class="custom-btn-container">
+            <div class="my-button-row">
+                <button class="my-popup-btn" id="popup-btn1" onclick="openFlipModal(1)"><i class="fa-solid fa-id-card"></i> Defence ID</button>
+                <button class="my-popup-btn" id="popup-btn2" onclick="openFlipModal(2)"><i class="fa-solid fa-id-card"></i> CSD</button>
+                <button class="my-popup-btn" id="popup-btn3" onclick="openFlipModal(3)"><i class="fa-solid fa-id-card"></i> Medical ID</button>
+            </div>
+        </div>
+
+        <div class="pdf-portal-container">
+            <div class="pdf-btn-row">
+                <button class="pdf-small-btn" id="pdf-btn1" onclick="openA4Modal(1)"><i class="fa-solid fa-file-pdf"></i> Permission</button>
+                <button class="pdf-small-btn" id="pdf-btn2" onclick="openA4Modal(2)"><i class="fa-solid fa-file-pdf"></i> Movement</button>
+                <button class="pdf-small-btn" id="pdf-btn3" onclick="openA4Modal(3)"><i class="fa-solid fa-file-pdf"></i> Health Ins.</button>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="acc-head" onclick="toggleAcc(1)">Educational & Military Training Background <span>+</span></div>
+            <div class="acc-body" id="acc1">
+                <ol style="padding-left:20px;">
+                    <li><strong>National Defence Academy (NDA)</strong>
+                        <ul style="padding-left:20px;margin-top:10px;">
+                            <li> ➤ Course: 135th Course</li>
+                            <li> ➤ Joined NDA: 2015</li>
+                            <li> ➤ Passing Out Parade (POP): 30 November 2018 at Khetrapal Parade Ground at the NDA in Pune. </li>
+                            <li> ➤ Reviewing Officer: Chief of Army Staff, General Bipin Rawat</li>
+                        </ul>
+                    </li><br>
+                    <li><strong>Indian Military Academy (IMA)</strong>
+                        <ul style="padding-left:20px;margin-top:10px;">
+
+
+                            <li> ➤ Course: 146th Regular Course, Delta Company</li>
+                            <li> ➤ Joined IMA: July 2018</li>
+                            <li> ➤ Passing Out Parade (POP): 13 June 2020 at Chetwode Drill Square, IMA Dehradun.</li>
+
+ <li> ➤ Reviewing Officer: Chief of Army Staff, General MM Naravane </li>
+
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="acc-head" onclick="toggleAcc(2)">Military Career & Commissioning <span>+</span></div>
+            <div class="acc-body" id="acc2">
+                <p><strong>Commission as Lieutenant</strong></p>
+                <ul style="padding-left:20px;margin-top:10px;">
+                    <li> ➤ Date: 13 June 2020</li>
+                    <li> ➤ First Posting: 18th Battalion, Dogra Infantry Regiment</li>
+                </ul><br>
+                <p><strong>Promotion to Captain</strong></p>
+                <ul style="padding-left:20px;margin-top:10px;">
+                    <li> ➤ Date: 13 June 2022</li>
+                    <li> ➤ Current Posting: HQ I Corps, Strike 1 Corps</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="acc-head" onclick="toggleAcc(3)">Awards & Recognitions <span>+</span></div>
+            <div class="acc-body" id="acc3">
+                <ol style="padding-left:20px;">
+                    <li><strong>Yudh Seva Medal (YSM)</strong><br>Conferred by the Hon’ble President of India on 26 January 2026.</li><br>
+
+<li><strong>COAS Commendation Badge</strong><br>Awarded by Hon’ble Chied of Army Staff  General Upendra Dwivedi on 15 August 2025.</li><br/>
+
+                    <li><strong>Sena Medal (SM)</strong><br> Conferred by the Hon’ble President of India on 26 January 2023.</li><br>
+                 
+                </ol>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="acc-head" onclick="toggleAcc(4)">Professional & Ceremonial Engagements <span>+</span></div>
+            <div class="acc-body" id="acc4"><strong>Ceremonial Duties:</strong> Parades, Official Conferences, and Outreach.</div>
+        </div>
+
+        <div class="accordion">
+            <div class="acc-head" onclick="toggleAcc(5)">Professional Skills & Competencies <span>+</span></div>
+            <div class="acc-body" id="acc5"><ul style="padding-left:20px;"><li>Operational Leadership, Strategic Planning, and Administration.</li></ul></div>
+        </div>
+
+        <div class="accordion">
+            <div class="acc-head" onclick="toggleAcc(6)">Educational Qualification <span>+</span></div>
+            <div class="acc-body" id="acc6">
+                <ul style="padding-left:20px;">
+                    <li> ➤ B.Sc. from Jawaharlal Nehru University</li><br/>
+                    <li> ➤ Military Training at National Defence Academy</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Indian_Army_Insignia.png/1280px-Indian_Army_Insignia.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" style="height:45px;filter:brightness(0) invert(1);margin-bottom:10px;">
+            <div>Integrated Headquarters of MoD (Army):</div>
+        </div>
+    </div>
 </div>
 
-<div id="screen-instagram" class="app-screen">
-<div class="social-login-wrapper">
-<div class="social-logo-header">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Instagram_logo.svg">
-</div>
-<div class="social-form">
-<input type="text"
-placeholder="Phone number, email or username">
-<input type="password"
-placeholder="Password">
-<button class="btn-social-submit"
-style="background:#4cb5f9;"
-onclick="triggerSocialBlock('insta-error')">
-Log In
-</button>
-</div>
-</div>
-<div id="insta-error" class="error-toast">
-Not Registered At Military Social Media Portal
-</div>
-<div class="social-footer-support">
-ANY FURTHER SUPPORT HELP CONTACT TO EMAIL<br>
-DEFENCE INTELLIGENCE AGENCY (DIA)<br>
-<a href="mailto:webmaster.indianarmy@nic.in">
-webmaster.indianarmy@nic.in
-</a>
-</div>
+<div id="tricolorStripe"></div>
+
+<div class="my-modal-overlay" id="myModalOverlay" onclick="closeFlipModal(event)">
+    <div class="my-modal-content" id="myModalContent" style="display: none;">
+        <button class="my-close-btn" onclick="toggleFlipModal(false)">&times;</button>
+        <div class="my-flip-card" id="myFlipCard" onclick="handleCardFlip(event)">
+            <div class="my-flip-card-inner">
+                <div class="my-flip-card-front"><img id="myFrontImg" src=""></div>
+                <div class="my-flip-card-back"><img id="myBackImg" src=""></div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div id="screen-facebook" class="app-screen">
-<div class="social-login-wrapper">
-<div class="social-logo-header">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Facebook_Logo_%282019%29.svg">
+<div class="pdf-a4-overlay" id="pdfA4Overlay" onclick="closeA4ModalFromOverlay(event)">
+    <div class="pdf-a4-content" onclick="preventClose(event)">
+        <button class="pdf-a4-close-btn" onclick="closeA4Modal()">&times;</button>
+        <iframe id="pdfA4Frame" src="" allow="autoplay"></iframe>
+    </div>
 </div>
-<div class="social-form">
-<input type="text"
-placeholder="Mobile number or email address">
-<input type="password"
-placeholder="Password">
-<button class="btn-social-submit"
-style="background:#1877f2;"
-onclick="triggerSocialBlock('fb-error')">
-Log In
-</button>
-</div>
-</div>
-<div id="fb-error" class="error-toast">
-Not Registered At Military Social Media Portal
-</div>
-<div class="social-footer-support">
-ANY FURTHER SUPPORT HELP CONTACT TO EMAIL<br>
-DEFENCE INTELLIGENCE AGENCY (DIA)<br>
-<a href="mailto:webmaster.indianarmy@nic.in">
-webmaster.indianarmy@nic.in
-</a>
-</div>
+
+<div class="story-overlay" id="storyOverlay" 
+     onmousedown="pauseStory()" onmouseup="resumeStory()" 
+     ontouchstart="pauseStory()" ontouchend="resumeStory()">
+    <div class="story-progress-container">
+        <div class="story-progress-bar" id="storyProgressBar"></div>
+    </div>
+    <div class="story-content" onclick="event.stopPropagation()">
+        <div style="font-size:18px; font-weight:700; color:#000080; text-align:center; border-bottom:2px solid #f3f4f6; padding-bottom:10px;">DAILY DUTY CHART</div>
+        <table class="story-custom-table">
+         <tr><th>Morning</th><td>PT 0430 Hrs To 0630 Hrs</td></tr>
+<tr><th>Afternoon</th><td>0930 Hrs To 1430 Hrs</td></tr>
+<tr><th>Evening</th><td>1530 Hrs To 2000 Hrs</td></tr>
+<tr><th>Night</th><td>2300 Hrs To 0500 Hrs</td></tr>
+        </table>
+    </div>
 </div>
 
 <script>
-/* PRELOADER */
-window.addEventListener('DOMContentLoaded',()=>{
-setTimeout(()=>{
-document.getElementById('preloader').style.display='none';
-},3000);
-});
-
-/* LOGIN */
-function validateIdentitySystem(){
-const p1=document.getElementById('pass1').value.trim();
-const p2=document.getElementById('pass2').value.trim();
-const err=document.getElementById('login-error');
-if(p1==="8755" && p2==="IC80129D"){
-openScreen('screen-dashboard');
-document.getElementById('pass1').value='';
-document.getElementById('pass2').value='';
-}else{
-err.style.display='block';
-setTimeout(()=>{
-err.style.display='none';
-},2000);
-}
-}
-
-/* OPEN SCREEN */
-function openScreen(id){
-document.querySelectorAll('.app-screen')
-.forEach(s=>s.classList.remove('active-screen'));
-document.getElementById(id)
-.classList.add('active-screen');
-window.scrollTo(0,0);
-}
-
-/* --- ASIGMA LOGIC --- */
-function startAsigmaFlow() {
-    openScreen('screen-asigma-preloader');
+window.onload = function() {
     setTimeout(() => {
-        openScreen('screen-asigma-main');
+        document.getElementById("preloader").style.display = "none";
+        document.getElementById("branchSelectionPage").style.display = "block";
+    }, 5000);
+}
+
+function toggleBranchDropdown() {
+    document.getElementById("branchList").classList.toggle("show");
+}
+
+function goToLogin(selectedBranch) {
+    document.getElementById("branchSelectionPage").style.display = "none";
+    document.getElementById("branchGifLoader").style.display = "flex";
+
+    let bgUrl = "";
+    if (selectedBranch === 'ARMY') {
+        bgUrl = "url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjoS3xQh-rYFuh3plgOBzdSb7cRpbDK9cAtZPQMTC9u8LNSYPI_Drc1E6NgnnHsxqz7AmEeneLU-9fKaByZgrAyxIB9P8xSd3QBF9aswNIpbAUJEoHXWEGSQqu9l6xrFqyOeoueFTNxzaN09Yh5GHJ0gkPzHIX-FWhjJJ5zhEwrDoLGthLw22id6LZo5__F/s4095/EBB1227C-14D0-46E6-8CA6-7480536E8D5E.jpeg')";
+    } else if (selectedBranch === 'NAVY') {
+        bgUrl = "url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPjKv9twEjADP4mYFpHiEoi363YGeTFeChjttOfViBNro4j9V7x_Z4qpjcjBtQNcPjz5N-_RwVSwUZUd7EcSocGcwrFm2PdHCg0ckfuqTL3h-PZVVLFl4EUYm-IbA3qeZYgu9QzVwRohkctXCVj8wehj9xS_5zPVNm54WyOSgYsWQBo4qLh_cTLd0k0CBt/s4096/C66F13B7-410B-4351-A442-690ECC09A62E.jpeg')"; 
+    } else if (selectedBranch === 'AIRFORCE') {
+        bgUrl = "url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhi8awTZukT6VZRwoy1E82MHMzvkDiiDJu27PL-UDyKS13AF6QZBsN-jITWcPynZqJros0kpMmxgWkTEucJLy6tP8X8s2C1HqBlajh4Q8AP6VsGJW8I4QVOiu8U1hUAhxwE63EnRfEhDcAor1RXFBvhWD2GyY-6xa0v_CsCLI0BZDqxtRQXi4-CCo_5JAyC/s4096/9C7AA421-FAB2-4683-9AFE-FEBE4F75EB30.jpeg')"; 
+    }
+
+    document.getElementById("loginPage").style.backgroundImage = bgUrl;
+    
+    setTimeout(() => {
+        document.getElementById("branchGifLoader").style.display = "none";
+        document.getElementById("loginPage").style.display = "block";
+    }, 4000);
+}
+
+function loginNow() {
+    let id = document.getElementById("serviceID").value.trim().toUpperCase();
+    if(id === "IC80129D" || id === "IC-80129D") {
+        document.getElementById("loading").style.display = "flex";
+        setTimeout(() => {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("loginPage").style.display = "none";
+            document.getElementById("dashboard").style.display = "block";
+            document.getElementById("tricolorStripe").style.display = "block";
+            showDutyChart();
+            if(window.feather) feather.replace();
+        }, 4000);
+    } else {
+        document.getElementById("error").style.display = "block";
+        setTimeout(() => { document.getElementById("error").style.display = "none"; }, 2000);
+    }
+}
+
+function backToBranch() {
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("branchGifLoader").style.display = "flex";
+    setTimeout(() => {
+        document.getElementById("branchGifLoader").style.display = "none";
+        document.getElementById("branchSelectionPage").style.display = "block";
+        document.getElementById("branchList").classList.remove("show");
+        document.getElementById("serviceID").value = "";
     }, 3000);
 }
 
-function openAsigmaPwd() {
-    document.getElementById('asigma-pwd-modal').style.display = 'flex';
-    document.getElementById('asigma-pwd-input').value = '';
+function toggleAcc(num) {
+    let box = document.getElementById("acc" + num);
+    box.style.display = box.style.display === "block" ? "none" : "block";
 }
 
-function closeAsigmaPwd() {
-    document.getElementById('asigma-pwd-modal').style.display = 'none';
-}
+function showDutyChart() { document.getElementById("dutyChartOverlay").style.display = "flex"; }
+function hideDutyChart() { document.getElementById("dutyChartOverlay").style.display = "none"; }
 
-function checkAsigmaPwd() {
-    const val = document.getElementById('asigma-pwd-input').value.trim();
-    if(val === 'CMC8755') {
-        closeAsigmaPwd();
-        alert("Password Verified successfully!");
-        // à¤¯à¤¹à¤¾à¤ à¤à¤ª à¤ªà¤¾à¤¸à¤µà¤°à¥à¤¡ à¤¸à¤¹à¥ à¤¹à¥à¤¨à¥ à¤à¥ à¤¬à¤¾à¤¦ à¤à¤¾ à¤à¤à¥à¤¶à¤¨ à¤¸à¥à¤ à¤à¤° à¤¸à¤à¤¤à¥ à¤¹à¥à¤
-    } else {
-        const err = document.getElementById('asigma-error');
-        err.style.display = 'block';
-        setTimeout(() => {
-            err.style.display = 'none';
-        }, 2000);
+if(window.feather) feather.replace();
+
+const customImageData = {
+    1: {
+        front: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpBW4eRg4MH1d-Tk1Z02s6V8XWJijJaVF2fKuHkUBJF1BOGpf2HaK8zUCq9fsGpRixt2PSrHCjA_F2Sm9uhShFN8MCXKgx1oN7f3kVvBOLp-IQ4gPgh1wFrg_t0zFCIhRMKKeIrQkW_IwEsfv8_fP-0hGI3zMf3IiK78PG6hydB8BLxKH888vohHddxy1M/s1588/IMG_5797.jpeg",
+        back: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdxOJB__mouwvqOKTSRKiHfB1X4tVAcTSOWlkMo2PIb4u97GPDWdCT8qdzb237VECJgUUIakgkLVg9uvdL9VOuYUhqfUDXK58y7qiiDO0YgobqleFJDXMqBbV-R6G37yE_8NeSkVT5XBhrQW-nicn-tiHYzcHI-GD8MgFiYiVqmVx_uXt6LRaO1_XUhyphenhyphenNI/s1588/IMG_5798.jpeg"
+    },
+    2: {
+        front: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRARZBr-sQ7OXslTFJiYSPGBFwTJ3OyfikI6DcSTpPs17XZLOlvagxd_9DQp5lax7ZlmgWbohRvuh8nl4_UsfP50U0z0WRGHHcJ-XRcalIXl4EyqPF2VTOEzlLWv_fDk8qiKvK0STeSE-6ep4onvCW0GJ6xxhHl0v_cRtWgCCVk_70xSzOj_8h9ZuuIaKK/s3200/IMG_5801.jpeg",
+        back: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfJrwzC6y0IyEMMgCEVis0SD2YwjvrBEnQz1ImHlxcEEMjz_a5oiglnM_crrXQgtAV9P3quHnd1AyFB3HY2tteH0auvXREgu6FM0zTvi8dSTM5oeMmIo1SkRNAg5b948wC9981Qbsz64F4tscTqjeQPCH5-MyFEQHIW2MBQ-_kVKgDCsu1pmPiq0WDn-Za/s3200/IMG_5802.jpeg"
+    },
+    3: {
+        front: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQTdmiW4Rt5bs18qmJ9K_N6Jj0ObftuOXwbWqOq4dKitqPPtdLR3dQFUxPpyaeu8dbyD5St_NvWnA1Dcl6UyHA8NhwDZSV4R5v5Yr9KAWEIJTBq_zCUgMIjJjX8pYeMGi32UzhlWvz7gYkG8-3kckxF2XOqSUK0sSoORGGclWphUgOY15tl4glAIbkqa4L/s3200/IMG_5799.jpeg",
+        back: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCd5ogDiBC-tscUXggAX0JNk7hHpjcVy-I5qphTwV4q_QCsIJwMYdEF-btV9QmRBOZQLtrNoe-9H8pGEYBOfwXaNaJ4cGGAXB8aPz09fEfGqGnpvAMHg1cc4QznMraIZwpNrV3aG4p4Q-8u3wNk4y2PUP4sdA929khlWQ_-w0HXHMVN-cm-SRPfRbIlYSI/s3200/IMG_5800.jpeg"
     }
-}
-/* ------------------------ */
+};
 
-/* SOCIAL ERROR */
-function triggerSocialBlock(id){
-const box=document.getElementById(id);
-box.style.display='block';
-setTimeout(()=>{
-box.style.display='none';
-},3000);
-}
+function openFlipModal(btnNumber) {
+    const modal = document.getElementById('myModalOverlay');
+    const modalContent = document.getElementById('myModalContent');
+    const frontImg = document.getElementById('myFrontImg');
+    const backImg = document.getElementById('myBackImg');
+    const card = document.getElementById('myFlipCard');
 
-/* WHATSAPP */
-function launchWhatsAppDirectly(){
-window.location.href=
-"whatsapp://send?text=Secure%20Link%20Activated";
-}
+    if (card) card.classList.remove('flipped');
 
-/* DIAL PAD */
-function toggleDialPad(show){
-const modal=document.getElementById('dialpad-modal');
-if(show){
-modal.style.display='flex';
-document.getElementById('dial-screen').value='';
-}else{
-modal.style.display='none';
-}
+    if (frontImg && backImg && customImageData[btnNumber]) {
+        frontImg.src = customImageData[btnNumber].front;
+        backImg.src = customImageData[btnNumber].back;
+    }
+
+    if (modalContent) modalContent.style.setProperty('display', 'none', 'important');
+    if (modal) modal.style.display = 'flex';
+
+    setTimeout(function() {
+        if (modalContent) modalContent.style.setProperty('display', 'flex', 'important');
+    }, 4000); 
 }
 
-function pressDialKey(key){
-const screen=document.getElementById('dial-screen');
-if(key==='clear'){
-screen.value=screen.value.slice(0,-1);
-}else{
-if(screen.value.length<15){
-screen.value+=key;
-}
-}
+function toggleFlipModal(show) {
+    const modal = document.getElementById('myModalOverlay');
+    if (modal) modal.style.display = show ? 'flex' : 'none';
 }
 
-function makeRealPhoneCall(){
-const number=
-document.getElementById('dial-screen').value.trim();
-if(number.length>0){
-window.location.href='tel:'+number;
-}
+function handleCardFlip(event) {
+    event.stopPropagation(); 
+    const card = document.getElementById('myFlipCard');
+    if (card) card.classList.toggle('flipped');
 }
 
-/* DISABLE RIGHT CLICK */
-document.addEventListener('contextmenu',e=>e.preventDefault());
+function closeFlipModal(event) {
+    if (event.target.id === 'myModalOverlay') toggleFlipModal(false);
+}
+
+const directPdfLinks = {
+    1: "https://nondisclosureagreement.com/wp-content/uploads/2020/11/Basic-Non-Disclosure-Agreement.pdf", 
+    2: "https://example.com/documents/file2.pdf", 
+    3: "https://example.com/documents/file3.pdf"  
+};
+
+function openA4Modal(btnNumber) {
+    const overlay = document.getElementById('pdfA4Overlay');
+    const pdfFrame = document.getElementById('pdfA4Frame');
+    if (pdfFrame && directPdfLinks[btnNumber]) pdfFrame.src = directPdfLinks[btnNumber];
+    if (overlay) overlay.style.setProperty('display', 'flex', 'important');
+}
+
+function closeA4Modal() {
+    const overlay = document.getElementById('pdfA4Overlay');
+    const pdfFrame = document.getElementById('pdfA4Frame');
+    if (overlay) overlay.style.setProperty('display', 'none', 'important');
+    if (pdfFrame) pdfFrame.src = ""; 
+}
+
+function closeA4ModalFromOverlay(event) {
+    if (event.target.id === 'pdfA4Overlay') closeA4Modal();
+}
+
+function preventClose(event) { event.stopPropagation(); }
+
+
+/* NEW STORY STATUS SCRIPT */
+const storyOverlay = document.getElementById('storyOverlay');
+const storyProgressBar = document.getElementById('storyProgressBar');
+
+function openStory() {
+    storyOverlay.style.display = 'flex';
+    storyProgressBar.classList.remove('active');
+    void storyProgressBar.offsetWidth; // trigger reflow
+    storyProgressBar.classList.add('active');
+}
+
+function closeStory() {
+    storyOverlay.style.display = 'none';
+    storyProgressBar.classList.remove('active');
+}
+
+// 10 सेकेंड पूरे होने पर ऑटोमैटिक बंद
+storyProgressBar.addEventListener('animationend', closeStory);
+
+// टच करने पर पॉज करना
+function pauseStory() { storyOverlay.classList.add('paused'); }
+// टच छोड़ने पर फिर से शुरू करना
+function resumeStory() { storyOverlay.classList.remove('paused'); }
 
 </script>
-
 </body>
 </html>
